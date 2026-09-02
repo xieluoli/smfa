@@ -124,7 +124,7 @@ final class ScannerViewController: UIViewController, @preconcurrency AVCaptureMe
     // AVCaptureSession 自身线程安全，但未标注 Sendable；start/stop 是阻塞调用，
     // 必须挪出主线程，因此显式声明可跨线程使用并固定在一条串行队列上。
     nonisolated(unsafe) private let session = AVCaptureSession()
-    private let sessionQueue = DispatchQueue(label: "cn.smfa.camera")
+    private let sessionQueue = DispatchQueue(label: "cc.space01.smfa.camera")
     private var previewLayer: AVCaptureVideoPreviewLayer?
     /// 同一个二维码会被连续回调多次，处理期间先关掉入口避免重复添加。
     private var isHandling = false

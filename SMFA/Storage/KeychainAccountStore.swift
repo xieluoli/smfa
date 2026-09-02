@@ -13,7 +13,7 @@ final class KeychainAccountStore {
 
     private let service: String
 
-    init(service: String = "cn.smfa.accounts") {
+    init(service: String = "cc.space01.smfa.accounts") {
         self.service = service
     }
 

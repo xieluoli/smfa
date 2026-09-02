@@ -9,7 +9,7 @@ struct AccountListViewModelTests {
 
     private func makeViewModel() -> AccountListViewModel {
         AccountListViewModel(
-            store: KeychainAccountStore(service: "cn.smfa.tests.\(UUID().uuidString)")
+            store: KeychainAccountStore(service: "cc.space01.smfa.tests.\(UUID().uuidString)")
         )
     }
 
@@ -22,7 +22,7 @@ struct AccountListViewModelTests {
 
     @Test("添加后进入列表并写入存储")
     func 添加并持久化() throws {
-        let store = KeychainAccountStore(service: "cn.smfa.tests.\(UUID().uuidString)")
+        let store = KeychainAccountStore(service: "cc.space01.smfa.tests.\(UUID().uuidString)")
         let viewModel = AccountListViewModel(store: store)
         try viewModel.add(makeAccount(name: "a@x.com"))
 
@@ -71,7 +71,7 @@ struct AccountListViewModelTests {
 
     @Test("重命名账号并持久化")
     func 重命名() throws {
-        let store = KeychainAccountStore(service: "cn.smfa.tests.\(UUID().uuidString)")
+        let store = KeychainAccountStore(service: "cc.space01.smfa.tests.\(UUID().uuidString)")
         let viewModel = AccountListViewModel(store: store)
         let account = makeAccount(name: "old@x.com")
         try viewModel.add(account)

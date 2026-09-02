@@ -10,7 +10,7 @@
 	<array>
 		<dict>
 			<key>UTTypeIdentifier</key>
-			<string>cn.smfa.backup</string>
+			<string>cc.space01.smfa.backup</string>
 			<key>UTTypeDescription</key>
 			<string>S-MFA 备份</string>
 			<key>UTTypeConformsTo</key>

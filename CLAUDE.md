@@ -40,7 +40,7 @@ xcrun xcresulttool export attachments --path .build/UIResult.xcresult --output-p
 
 ## 命名
 
-展示名 `S-MFA`，技术标识符一律用 `smfa`：Bundle ID `cn.smfa`、备份文件类型 `cn.smfa.backup`、扩展名 `.smfa`、Keychain service `cn.smfa.accounts`。
+展示名 `S-MFA`。反向域名标识符统一用 `cc.space01.smfa`——取自项目域名 `smfa.space01.cc` 的反转，覆盖 Bundle ID、备份文件类型 `cc.space01.smfa.backup`、Keychain service `cc.space01.smfa.accounts`。备份扩展名是 `.smfa`（不是域名，不带前缀）；target / 模块 / 目录名用 `SMFA` / `SMFACore`。
 
 **改 Keychain service 会让旧数据读不出来**——它是账号存储的键，改了等于换了个抽屉。真机上用过之后不要再动。
 

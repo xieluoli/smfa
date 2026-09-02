@@ -3,7 +3,7 @@ import UniformTypeIdentifiers
 
 extension UTType {
     /// 与 Info.plist 里 UTExportedTypeDeclarations 声明的标识符一致。
-    static let mfaBackup = UTType(exportedAs: "cn.smfa.backup")
+    static let mfaBackup = UTType(exportedAs: "cc.space01.smfa.backup")
 }
 
 /// 交给系统「文件」App 保存的备份文档。内容已由 BackupCodec 加密，这里只负责搬运字节。

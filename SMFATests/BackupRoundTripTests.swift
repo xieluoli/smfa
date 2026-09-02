@@ -11,7 +11,7 @@ struct BackupRoundTripTests {
 
     private func makeViewModel() -> AccountListViewModel {
         AccountListViewModel(
-            store: KeychainAccountStore(service: "cn.smfa.tests.\(UUID().uuidString)")
+            store: KeychainAccountStore(service: "cc.space01.smfa.tests.\(UUID().uuidString)")
         )
     }
 

@@ -81,7 +81,7 @@ smfa/
 
 ### 5. 备份导出/导入走系统「文件」
 
-SwiftUI 原生 `.fileExporter` / `.fileImporter`，配合 `Info.plist` 里导出的自定义 UTType `cn.smfa.backup`（`conformsTo: public.data`，扩展名 `smfa`）。不用 `UIDocumentPickerViewController` 包一层 `UIViewControllerRepresentable`，少一层胶水。
+SwiftUI 原生 `.fileExporter` / `.fileImporter`，配合 `Info.plist` 里导出的自定义 UTType `cc.space01.smfa.backup`（`conformsTo: public.data`，扩展名 `smfa`）。不用 `UIDocumentPickerViewController` 包一层 `UIViewControllerRepresentable`，少一层胶水。
 
 ### 6. 扫码
 
@@ -146,6 +146,6 @@ final class KeychainAccountStore {
 
 ## Open Questions
 
-1. **Bundle ID 与签名**：暂定 `cn.smfa`，本轮用模拟器构建（无需签名）。装真机需要用户提供开发者账号 Team ID。
+1. **签名**：Bundle ID 已定为 `cc.space01.smfa`（取自域名 `smfa.space01.cc` 的反转，2026-09-01 用户指定）。本轮用模拟器构建，无需签名；装真机仍需用户提供开发者账号 Team ID。
 2. **iCloud 备份**：参考的阿里云 App 同时提供 iCloud 与「文件」两条路。本轮只做「文件」，iCloud 是否要补取决于问题 1。
 3. **App 图标与配色**：当前用系统默认，未做视觉设计。

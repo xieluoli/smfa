@@ -8,7 +8,7 @@ struct KeychainAccountStoreTests {
 
     /// 每个测试用独立 service，避免相互污染，也不碰 App 正式数据。
     private func makeStore() -> KeychainAccountStore {
-        KeychainAccountStore(service: "cn.smfa.tests.\(UUID().uuidString)")
+        KeychainAccountStore(service: "cc.space01.smfa.tests.\(UUID().uuidString)")
     }
 
     private func makeAccount(name: String) -> MFAAccount {
@@ -52,7 +52,7 @@ struct KeychainAccountStoreTests {
 
     @Test("Keychain 项限定本机且仅解锁后可读")
     func 可访问性() throws {
-        let service = "cn.smfa.tests.\(UUID().uuidString)"
+        let service = "cc.space01.smfa.tests.\(UUID().uuidString)"
         let store = KeychainAccountStore(service: service)
         try store.save([makeAccount(name: "a@x.com")])
 

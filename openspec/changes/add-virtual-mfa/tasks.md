@@ -36,7 +36,7 @@
 - [x] 5.5 `ScannerView`：AVFoundation 扫码 + 权限拒绝兜底 + 无效码提示不退出
 - [x] 5.6 `BackupPasswordSheet`：设置密码（两次输入、≥8 位）+ `.fileExporter` 导出
 - [x] 5.7 `ImportPasswordSheet`：`.fileImporter` 选文件 + 输入密码 + 合并结果提示
-- [x] 5.8 `Info.plist`：相机权限文案、导出 UTType `cn.smfa.backup`
+- [x] 5.8 `Info.plist`：相机权限文案、导出 UTType `cc.space01.smfa.backup`
 
 ## 6. 验证与交付
 

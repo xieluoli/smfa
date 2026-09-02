@@ -7,7 +7,7 @@
 ## What Changes
 
 - 新建 iOS App 工程 `SMFA`（SwiftUI，仅 iOS），以及纯逻辑 Swift Package `SMFACore`
-- **命名**（2026-08-31 用户指定）：展示名 `S-MFA`（主屏幕图标名、主界面标题、备份文件名、相机权限文案）；技术标识符统一用 `smfa`——Bundle ID `cn.smfa`、备份文件类型 `cn.smfa.backup`、扩展名 `.smfa`、Keychain service `cn.smfa.accounts`，target / 模块 / 目录 / 仓库名为 `SMFA` / `SMFACore` / `smfa`
+- **命名**（2026-08-31 用户指定）：展示名 `S-MFA`（主屏幕图标名、主界面标题、备份文件名、相机权限文案）；技术标识符统一用 `smfa`——Bundle ID `cc.space01.smfa`、备份文件类型 `cc.space01.smfa.backup`、扩展名 `.smfa`、Keychain service `cc.space01.smfa.accounts`，target / 模块 / 目录 / 仓库名为 `SMFA` / `SMFACore` / `smfa`
 - **展示**：账号列表实时滚动 6 位动态码，倒计时进度条随剩余秒数收缩并变色，点击卡片复制口令，支持按账号名搜索
 - **添加（扫码）**：相机扫描 `otpauth://totp/...` 二维码，识别后进入确认页
 - **添加（手动）**：手工填写账号名 + Base32 密钥
@@ -33,6 +33,6 @@
 - **新增代码**：`SMFA/`（App）、`SMFACore/`（Swift Package）、`SMFA.xcodeproj`
 - **系统权限**：相机（`NSCameraUsageDescription`），用于扫码添加
 - **系统能力**：Keychain（存密钥）、Files App 文档选择器（备份导入导出）
-- **自定义文件类型**：导出 UTType `cn.smfa.backup`，扩展名 `.smfa`
+- **自定义文件类型**：导出 UTType `cc.space01.smfa.backup`，扩展名 `.smfa`
 - **外部依赖**：无第三方库；加密全部走系统 CryptoKit
 - **不涉及**：任何服务端、网络请求、账号体系
