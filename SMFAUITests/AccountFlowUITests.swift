@@ -19,18 +19,18 @@ final class AccountFlowUITests: XCTestCase {
     func test走查主流程() {
         capture("01-空状态")
 
-        addAccount(name: "Gitee:xieluoli@foxmail.com", secret: "JBSWY3DPEHPK3PXP")
+        addAccount(name: "Gitee:alice@example.com", secret: "JBSWY3DPEHPK3PXP")
         capture("02-首个账号与动态码")
 
-        addAccount(name: "OpenAI:sakanastar22@gmail.com", secret: "MZXW6YTBOIFA2DQ")
-        addAccount(name: "Google:qijihezi@gmail.com", secret: "GEZDGNBVGY3TQOJQ")
+        addAccount(name: "OpenAI:bob@example.com", secret: "MZXW6YTBOIFA2DQ")
+        addAccount(name: "Google:carol@example.com", secret: "GEZDGNBVGY3TQOJQ")
         capture("03-账号列表")
 
         // 口令应随周期自动翻转：等到下一个周期后再截一张，用于对比
         Thread.sleep(forTimeInterval: 31)
         capture("04-下一周期口令已刷新")
 
-        app.staticTexts["Google:qijihezi@gmail.com"].tap()
+        app.staticTexts["Google:carol@example.com"].tap()
         XCTAssertTrue(app.staticTexts["口令已复制"].waitForExistence(timeout: 3))
         capture("05-点击复制口令")
 
@@ -39,7 +39,7 @@ final class AccountFlowUITests: XCTestCase {
         app.navigationBars.buttons["取消"].tap()
         waitForListScreen()
 
-        openDeleteConfirmation(for: "Google:qijihezi@gmail.com")
+        openDeleteConfirmation(for: "Google:carol@example.com")
         capture("07-删除二次确认")
         app.alerts.buttons["取消"].tap()
         waitForListScreen()
@@ -48,9 +48,9 @@ final class AccountFlowUITests: XCTestCase {
         // 而搜索本身只需验证过滤结果。
         search("openai")
         // 等不匹配的账号消失，而不是等匹配的出现——后者本来就在屏幕上，等于没等
-        XCTAssertTrue(app.staticTexts["Google:qijihezi@gmail.com"].waitForNonExistence(timeout: 5),
+        XCTAssertTrue(app.staticTexts["Google:carol@example.com"].waitForNonExistence(timeout: 5),
                       "搜索后不匹配的账号应被过滤掉")
-        XCTAssertTrue(app.staticTexts["OpenAI:sakanastar22@gmail.com"].exists)
+        XCTAssertTrue(app.staticTexts["OpenAI:bob@example.com"].exists)
         capture("08-搜索过滤")
     }
 
@@ -75,7 +75,7 @@ final class AccountFlowUITests: XCTestCase {
     /// account-store 规格：冷启动后账号仍在。验证数据真的落到了 Keychain，
     /// 而不是只活在内存里。
     func test杀掉重启后账号仍在() {
-        addAccount(name: "Gitee:xieluoli@foxmail.com", secret: "JBSWY3DPEHPK3PXP")
+        addAccount(name: "Gitee:alice@example.com", secret: "JBSWY3DPEHPK3PXP")
 
         app.terminate()
 
@@ -83,7 +83,7 @@ final class AccountFlowUITests: XCTestCase {
         app.launchArguments = []
         app.launch()
 
-        XCTAssertTrue(app.staticTexts["Gitee:xieluoli@foxmail.com"].waitForExistence(timeout: 5),
+        XCTAssertTrue(app.staticTexts["Gitee:alice@example.com"].waitForExistence(timeout: 5),
                       "冷启动后账号应仍在列表中")
         capture("11-冷启动后账号仍在")
     }
