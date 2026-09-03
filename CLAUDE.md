@@ -16,6 +16,7 @@
 | `SMFA/` | App target：SwiftUI 界面、Keychain 存储、相机扫码、文件导入导出 |
 | `SMFATests/` | App 单测：Keychain、ViewModel、备份往返 |
 | `SMFAUITests/` | 端到端走查，每步产出截图 |
+| `Tools/` | 一次性小工具，如 `make-appicon.swift` 生成白底黑字的 App 图标 |
 | `openspec/` | 需求与设计工件 |
 
 ## 常用命令
